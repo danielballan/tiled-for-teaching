@@ -9,7 +9,6 @@ should work identically.
 git clone https://github.com/danielballan/tiled-for-teaching
 cd tiled-for-teaching
 cp env.example env
-mkdir storage/
 
 # TODO Make this initialize automatically if needed...
 podman run -v ./storage:/storage ghcr.io/bluesky/tiled:v0.1.0a108 tiled admin initialize-database sqlite+aiosqlite:////storage/authn.db
