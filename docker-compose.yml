@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  tiled:
+    image: ghcr.io/bluesky/tiled:v0.1.0a108
+    volumes:
+      - ./config:/deploy/config:ro
+      - ./storage:/storage
+    environment:
+      ORCID_CLIENT_ID: ${ORCID_CLIENT_ID}
+      ORCID_CLIENT_SECRET: ${ORCID_CLIENT_SECRET}
+      TILED_SERVER_SECRET_KEYS: ${TILED_SERVER_SECRET_KEYS}
+    ports:
+      - 8000:8000
+    restart: unless-stopped
